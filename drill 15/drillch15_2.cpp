@@ -70,8 +70,10 @@ int main()
 try{
     
     vector<Person> emberek;
-
+     Person temp;
+    cout<<"alapertelmezett:"<<temp<<endl; 
     cout << "Adj meg keresztnevet meg egy vezetéknevet és egy kort 2x" << endl;
+
     for (int i = 0; i < 2; ++i)
     {
         Person var;
