@@ -12,7 +12,7 @@ using namespace Graph_lib;
 
 int main()
 {
-	Point t1(101,101);
+	Point t1(50,50);
 	Simple_window win (t1,600,400,"My window");
 
 	Image motor{Point{350,50},"motorkep.jpg"};
