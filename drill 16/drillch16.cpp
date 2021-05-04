@@ -1,5 +1,5 @@
 /*
-    g++ drillch16.cpp Graph.cpp Window.cpp GUI.cpp -o ch16 `fltk-config --ldflags --use-images`
+    g++ ch16.cpp Graph.cpp Window.cpp GUI.cpp -o ch16 `fltk-config --ldflags --use-images`
 */
 
 #include "Simple_window.h"
@@ -62,8 +62,8 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     xy_out(Point(100,0),100,20,"current (x,y):"),
     color_menu(Point(x_max()-70,30),70,20,Menu::vertical,"color"),
     menu_button(Point(x_max()-80,30),80,20,"color menu",cb_menu),
-    style_menu(Point(x_max()-70,60),70,20,Menu::vertical,"style"),
-    stylemenu_button(Point(x_max()-80,60),80,20,"style menu",cb_stylemenu)
+    style_menu(Point(x_max()-70,120),70,20,Menu::vertical,"style"),
+    stylemenu_button(Point(x_max()-80,120),80,20,"style menu",cb_stylemenu)
 {
     attach(next_button);
     attach(quit_button);
@@ -88,10 +88,7 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
 
 void Lines_window::show_menu()
 {
-    int dy = (color_menu.selection.size()-1)*20;
-    stylemenu_button.move(0,dy);
-    for (int i = 0; i<style_menu.selection.size(); ++i)
-        style_menu.selection[i].move(0,dy);
+    
     hide_stylemenu();
     color_menu.show();
 }
@@ -100,10 +97,6 @@ void Lines_window::hide_menu()
 {
     color_menu.hide();
     menu_button.show();
-    int dy = -(color_menu.selection.size()-1)*20;
-    stylemenu_button.move(0,dy);
-    for (int i = 0; i<style_menu.selection.size(); ++i)
-        style_menu.selection[i].move(0,dy);
     hide_stylemenu();
 }
 
